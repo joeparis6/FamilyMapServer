@@ -1,0 +1,40 @@
+CREATE TABLE "Persons" (
+	"personID"	String NOT NULL,
+	"associatedUsername"	String NOT NULL,
+	"firstName"	String NOT NULL,
+	"lastName"	String NOT NULL,
+	"gender"	String NOT NULL,
+	"fatherID"	String,
+	"motherID"	String,
+	"spouseID"	String,
+	PRIMARY KEY("personID")
+);
+
+CREATE TABLE "Users" (
+	"userName"	String,
+	"passWord"	String NOT NULL,
+	"email"	String NOT NULL,
+	"firstName"	String NOT NULL,
+	"lastName"	String NOT NULL,
+	"gender"	String NOT NULL,
+	"personID"	String NOT NULL,
+	PRIMARY KEY("personID")
+);
+
+CREATE TABLE "Events" (
+	"eventID"	String NOT NULL,
+	"associatedUsername"	String NOT NULL,
+	"personID"	String NOT NULL,
+	"latitude"	float NOT NULL,
+	"longitude"	float NOT NULL,
+	"country"	String NOT NULL,
+	"city"	String NOT NULL,
+	"eventType"	String NOT NULL,
+	"year"	int NOT NULL,
+	PRIMARY KEY("eventID")
+);
+
+CREATE TABLE "AuthTokens" (
+	"userAuthToken"	String NOT NULL,
+	"userName"	String NOT NULL
+);
